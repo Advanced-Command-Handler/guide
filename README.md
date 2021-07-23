@@ -1,7 +1,3 @@
----
-description: Home
----
-
 # Home
 
 ## What it is
