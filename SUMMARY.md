@@ -21,3 +21,9 @@
 * [Logger](utilities/logger.md)
 * [Miscellaneous](utilities/miscellaneous.md)
 
+---
+
+* [v2-to-v3-migration-guide](untitled.md)
+* [Documentation](https://advanced-command-handler.github.io/docs/)
+* [GitHub](https://github.com/Advanced-Command-Handler/Advanced-Command-Handler/)
+
