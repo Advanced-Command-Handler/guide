@@ -1,4 +1,4 @@
-# v2-to-v3-migration-guide
+# v2 to v3 Migration Guide
 
 ## Migration from v2 to v3
 
