@@ -2,7 +2,11 @@
 
 ## What it is
 
-This is a node.js library written in typescript for more than a year that is here to simplify bot creation with automation for commands/events handling, defaults commands/events, plus some utils classes and functions.
+This is a node.js library written in typescript for more than a year that is here to simplify bot creation with automation for commands/events handling, defaults commands/events, plus some utilities classes and functions.
+
+#### [See on GitHub](https://github.com/Advanced-Command-Handler/Advanced-Command-Handler)
+
+#### [Documentation](https://advanced-command-handler.github.io/docs/)
 
 ## Installation
 
