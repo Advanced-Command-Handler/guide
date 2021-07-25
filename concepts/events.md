@@ -21,16 +21,16 @@ The property `name` should be equal to the discord.js event you want to use, lik
 
 And you can see a "complete" example of what a command could look like :
 
-{% code title="ReadyEvent.js" %}
+{% code title="GuildMemberAddEvent.js" %}
 ```javascript
 const {Event, Logger} = require('advanced-command-handler');
 
-module.exports = class ReadyEvent extends Event {
+module.exports = class GuildMemberAddEvent extends Event {
     name = 'ready';
-    once = true;
     
-    async run(ctx) {
-        Logger.event(`Client '${ctx.client.tag}' connected !\nIt is using '${ctx.handler.version}' version.`);
+    async run(ctx, member) {
+        member.user.send(`Hi ! Welcome to our guild ${member.guild.name}, we now have **${member.guild.memberCount}** members !`);
+        Logger.event(`A member has joined the guild '${member.guild.name}'.`, ctx.eventName);
     }
 }
 ```
