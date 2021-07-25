@@ -43,5 +43,9 @@ this.subCommand('name',
 });
 ```
 
+{% hint style="info" %}
+Note that your SubCommands and SubCommands aliases can contains spaces in them, it will work.
+{% endhint %}
+
 ## [Documentation](https://advanced-command-handler.github.io/docs/classes/Command.html#subCommand)
 

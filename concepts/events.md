@@ -40,5 +40,5 @@ module.exports = class GuildMemberAddEvent extends Event {
 Note that setting `once` to `true` is not needed, it will just use the `once` method for `EventEmitter` and the difference on performances is minimal.
 {% endhint %}
 
-## [Documentation](https://advanced-command-handler.github.io/docs/classes/event.html)
+## [Documentation](https://advanced-command-handler.github.io/docs/classes/Event.html)
 
