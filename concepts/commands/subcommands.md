@@ -47,5 +47,9 @@ this.subCommand('name',
 Note that your SubCommands and SubCommands aliases can contains spaces in them, it will work.
 {% endhint %}
 
+{% hint style="warning" %}
+If you don't put a description for your SubCommand, it will not be shown into the default help command.
+{% endhint %}
+
 ## [Documentation](https://advanced-command-handler.github.io/docs/classes/Command.html#subCommand)
 
