@@ -12,6 +12,7 @@ It also prevents you from creating/launching multiple CommandHandler from one pr
 
 In order to initialize your CommandHandler, you have to use the `create` function with the needed options.
 
+{% code title="index.js" %}
 ```javascript
 const {CommandHandler} = require('advanced-command-handler');
 
@@ -23,8 +24,10 @@ CommandHandler.create({
     prefixes: ['!'],
     owners: ['your ID'],
     saveLogsInFile: ['logs.txt']
+    useMentionAsPrefix: true,
 });
 ```
+{% endcode %}
 
 {% hint style="info" %}
 By default `prefixes` will be `!` and the mention of your bot.
@@ -36,6 +39,7 @@ The `owners`property is only used for the `Tag.ownerOnly` tag with the default `
 
 To launch the CommandHandler, use the `launch` method and put the token of your bot, you can also put here `clientOptions`, you can see here an example of this :
 
+{% code title="index.js" %}
 ```javascript
 CommandHandler.launch({
     token: 'the token of your bot',
@@ -44,10 +48,18 @@ CommandHandler.launch({
     clientOptions: {
         ws: {
             intents: ['GUILDS', 'GUILD_MESSAGES']
-        } 
+        }
     }
 });
 ```
+{% endcode %}
+
+### Presence
+
+You have two options for setting the presence of your bot.
+
+* You can set the `presence` property as the presence you want as a [PresenceData](https://discord.js.org/#/docs/main/stable/typedef/PresenceData).
+* You can set the `presences` property as an array of presences as [PresenceData](https://discord.js.org/#/docs/main/stable/typedef/PresenceData)s. If you use it, by default it will cycle between presences, you can disable this behavior by setting the property`cycleBetweenPresences` to `false` and it will thus use the first presence you set. You can also change the duration between cycles using the `cycleDuration` property that take a number as seconds, and is set by default to 60.
 
 ### Loading Commands & Events
 

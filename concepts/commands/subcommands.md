@@ -26,6 +26,10 @@ class MyCommand extends Command {
 ```
 {% endcode %}
 
+{% hint style="info" %}
+You can use `CommandContext#isCallingASubCommand` to know if you are calling a SubCommand, because calling a SubCommand will still execute the `run` method.
+{% endhint %}
+
 ### Passing options to your SubCommand
 
 You can set the same options of a command to your SubCommands by passing an object before the callback :
