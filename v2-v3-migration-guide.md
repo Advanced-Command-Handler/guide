@@ -6,7 +6,7 @@ The v3 of the CommandHandler introduced a lot of new features I wanted to add fo
 
 ## How to install it
 
-Library now requires at least `Node.js` v16, which is LTS. Just select the beta version from npm.
+Library now requires at least `Node.js` v16, which will become LTS in october. Just select the beta version from npm.
 
 ```text
 npm i -s advanced-command-handler@beta
@@ -23,7 +23,7 @@ This method has been removed because of the method being not coherent with the c
 ```diff
 - client.hasPermission(message, 'SEND_MESSAGES');
 
-+ message.guild?.me?.hasPermission('SEND_MESSAGES, {checkOwner: false, checkAdmin: false});
++ message.guild?.me?.hasPermission('SEND_MESSAGES, {checkOwner: false, checkAdmin: false})
 ```
 
 ### BetterEmbed
@@ -150,6 +150,12 @@ module.exports = class ReadyEvent extends Event {
 
 > Note: Notice that in both case, syntax is shorter and more readable.
 
+### Functions
+
+`argError`, `codeError` and `permissionsError` now only accept a `CommandContext` argument instead of `message` and `command`.
+
+`saveJSON` only accept a JSON instead of `any` for the value type.
+
 ### Logger
 
 **Logger\#test**
@@ -242,6 +248,10 @@ See on the [documentation](https://advanced-command-handler.github.io/classes/co
 
 ### CommandHandler
 
+**CommandHandler\#create**
+
+The method has a new property `useMentionPrefix` and is a boolean, if set to true the mention of the bot will be added to the prefixes. The property is set to `true` by default to follow the behavior of v2.
+
 **CommandHandler\#getCommandAliasesAndNames**
 
 `CommandHandler.getCommandAliasesAndNames()` is a new function returning in one array the name & all the aliases of all commands.
@@ -249,6 +259,14 @@ See on the [documentation](https://advanced-command-handler.github.io/classes/co
 **CommandHandler\#getPrefixFromMessage**
 
 `CommandHandler.getPrefixFromMessage(message)` is a new function returning the prefix \(if found\) used in the message.
+
+**CommandHandler\#launch**
+
+The methods now lets you set the presence of the bot or cycling presences, see [here](https://ayfri.gitbook.io/advanced-command-handler/concepts/command-handler#presence) how to do it.
+
+**CommandHandler\#loadEvent**
+
+`CommandHandler#loadEvent(directory, filename)` ****is a new function to load a single event.
 
 **CommandHandler\#unloadCommand**
 
@@ -262,7 +280,7 @@ See on the [documentation](https://advanced-command-handler.github.io/classes/co
 
 There is now a new default `help` command.
 
-See their
+See their documentation [here](defaults.md).
 
 ### Event
 
@@ -341,6 +359,8 @@ It adds a `waitEmoji` property that is by default equals to `⌛` and the `start
 `SubCommand` is a new subclass of the class `Command`, it's useful for handling commands with different behavior of one command, it's not similar as arguments that are not currently handled.
 
 SubCommand has the same field as `Command` class, except that its run function uses a `SubCommandContext` instead of a `CommandContext`.
+
+See [here ](https://ayfri.gitbook.io/advanced-command-handler/concepts/commands/subcommands)how to create and use SubCommands.
 
 ### SubCommandContext
 
