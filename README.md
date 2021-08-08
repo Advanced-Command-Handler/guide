@@ -10,7 +10,7 @@ This is a node.js library written in typescript for more than a year that is her
 
 ## Installation
 
-To install this module, you need [Node.js](https://nodejs.org/).
+To install this module, you need [Node.js](https://nodejs.org/) with at least version 16.
 
 Then execute this command :
 
